@@ -1,0 +1,26 @@
+{
+  "name": "controle-server",
+  "version": "1.0.0",
+  "description": "Projeto server criado para curso de react, redux e react native na Impacta",
+  "main": "loader.js",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vicduraes/projeto-impacta-react.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.1",
+    "node-restful": "^0.2.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}
