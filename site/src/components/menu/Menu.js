@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default props => (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-info">
         <Link className="navbar-brand" to="/"> Ada Cursos </Link>
 
         <button className="navbar-toggler" type="button"

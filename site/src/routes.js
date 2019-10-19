@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Curso from './pages/cursos/index';
-import Contato from './pages/contato/index';
+import Curso from './pages/cursos/Cursos';
+import Contato from './pages/contato/Contato';
 
 export default props => (
 <Switch>

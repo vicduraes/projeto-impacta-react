@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from '../../components/menu/header'
+import Cadastro from './cadastro/Cadastro'
 
 export default class Curso extends Component {
     render() {
@@ -7,8 +8,9 @@ export default class Curso extends Component {
         <div className="container">
             <Header 
                 titulo="Cursos" 
-                subtitulo="Encontre o curso perfeito para você!"
+                subtitulo="Encontre aqui o curso perfeito para você!"
             />
+            <Cadastro />
         </div>
         )
     }

@@ -6,7 +6,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/popper.js/dist/umd/popper.min'
 import '../node_modules/font-awesome/css/font-awesome.min.css'
 
-import Menu from './components/menu'
+import Menu from './components/menu/Menu'
 import Routes from './routes'
 
 function App() {
