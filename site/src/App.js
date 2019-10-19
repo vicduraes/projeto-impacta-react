@@ -9,6 +9,8 @@ import '../node_modules/font-awesome/css/font-awesome.min.css'
 import Menu from './components/menu/Menu'
 import Routes from './routes'
 
+import './App.css'
+
 function App() {
   return (
     <div className="App">
