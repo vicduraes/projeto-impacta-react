@@ -1,5 +1,4 @@
 import React from 'react'
-
 import '../node_modules/jquery/dist/jquery.min'
 import '../node_modules/bootstrap/dist/js/bootstrap.min'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -8,8 +7,6 @@ import '../node_modules/font-awesome/css/font-awesome.min.css'
 
 import Menu from './components/menu/Menu'
 import Routes from './routes'
-
-import './App.css'
 
 function App() {
   return (
