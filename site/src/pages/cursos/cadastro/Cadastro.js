@@ -6,9 +6,10 @@ import CursoList from '../list/List'
 const URL = "http://localhost:3200/api/curso"
 
 export default class Cadastro extends Component {
- 
+
     initialState = {
         data: [],
+        _id: '',
         codigo: 0,
         descricao: '',
         cargaHoraria: 0,
@@ -30,28 +31,53 @@ export default class Cadastro extends Component {
     }
 
     adicionarCurso(e) {
-        console.log('inicio adicionarCurso')
-        e.preventDefault();
-        const codigo = this.state.codigo;
-        const descricao = this.state.descricao;
-        const cargaHoraria = this.state.cargaHoraria;
-        const preco = this.state.preco;
-        const categoria = this.state.categoria;
-
+        e.preventDefault()
+        const {_id, codigo, descricao, cargaHoraria, preco, categoria} = this.state
         const body = { codigo, descricao, cargaHoraria, preco, categoria }
 
-        console.log(body)
-        axios.post(URL, body)
+        if(_id && _id.trim() !== '') {
+            axios.put(`${URL}/${_id}`, body)
             .then(_ => {
-                alert("Curso adicionado");
+                this.cbSuccess('Curso atualizado')
+            }).catch(this.cbError)
+        } else {
+            axios.post(URL, body)
+            .then(_ => {
+                this.cbSuccess('Curso adicionado')
+            }).catch(this.cbError)
+        }
+    }
+
+    removerCurso = function(curso) {
+        if(window.confirm('Você deseha remover o curso selecionado?')) {
+            axios.delete(`${URL}/${curso._id}`).then(response => {
+                alert(` Curso ${curso.descricao} foi removido com sucesso!`)
                 this.listar();
-                this.setState({codigo: 0,
-                    descricao: '',
-                    cargaHoraria: 0,
-                    preco: 0.0,
-                    categoria: 'REDES'})
-        }).catch(error => {
-            const cargaHoraria =  error.response.data.errors.cargaHoraria
+            }).catch(error => {
+                console.log(error)
+            })
+        }
+    }
+
+    consultarCurso = function (curso) {
+        this.setState({...this.state, 
+            _id: curso._id,
+            codigo: curso.codigo,
+            descricao: curso.descricao,
+            cargaHoraria: curso.cargaHoraria,
+            preco: curso.preco,
+            categoria: curso.categoria
+        })
+    }
+
+    cbSuccess = function(msg) {
+        alert(msg);
+        this.setState(this.initialState);
+        this.listar();
+    }
+
+    cbError = function(error) {
+        const cargaHoraria =  error.response.data.errors.cargaHoraria
             const codigo =  error.response.data.errors.codigo
             const preco =  error.response.data.errors.preco
             const descricao =  error.response.data.errors.descricao
@@ -77,18 +103,6 @@ export default class Cadastro extends Component {
                 texto += 'Categoria Inválida\n'
             }
             alert(texto)
-        });
-    }
-
-    removerCurso = function(curso) {
-        if(window.confirm('Você deseha remover o curso selecionado?')) {
-            axios.delete(`${URL}/${curso._id}`).then(response => {
-                alert(` Curso ${curso.descricao} foi removido com sucesso!`)
-                this.listar();
-            }).catch(error => {
-                console.log(error)
-            })
-        }
     }
 
     alteraCampos = function (target) {
@@ -129,6 +143,7 @@ export default class Cadastro extends Component {
                 <div className="col-md-6">
                     <CursoList listaCursos={this.state.data}
                         removerCurso={this.removerCurso.bind(this)}
+                        consultarCurso={this.consultarCurso.bind(this)}
                     />
                 </div>
             </div>

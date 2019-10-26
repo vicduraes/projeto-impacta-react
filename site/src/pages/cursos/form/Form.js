@@ -65,9 +65,9 @@ export default class Formulario extends Component {
                         </label>
                         <div className="col-sm-6 col-6">
                             <select className="form-control" id="categoria" value={this.props.categoria} onChange={(e) => {this.props.alteraCampos(e.target)}}>
-                                <option>INFORMÁTICA</option>
+                                <option>INFORMATICA</option>
                                 <option>ENGENHARIA</option>
-                                <option>ADMINISTRAÇÃO</option>
+                                <option>ADMINISTRACAO</option>
                                 <option>REDES</option>
                             </select>
                         </div>
