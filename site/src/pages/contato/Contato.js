@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Header from '../../components/menu/header'
-
+import ContatoForm from './Form/ContatoForm'
 export default class Contato extends Component {
     render() {
         return (
@@ -9,6 +9,7 @@ export default class Contato extends Component {
                 titulo="Contato" 
                 subtitulo="Entre em contato conosco"
             />
+            <ContatoForm />
         </div>
         )
     }
