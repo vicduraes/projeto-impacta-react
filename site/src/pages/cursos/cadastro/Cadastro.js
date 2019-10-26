@@ -20,7 +20,7 @@ export default class Cadastro extends Component {
       constructor (props) {
         super(props)
         this.state = this.initialState
-      }
+    }
 
     componentWillMount() {
         this.listar()
@@ -127,17 +127,24 @@ export default class Cadastro extends Component {
         }
     }
 
+    limparForm = function(e) {
+        e.preventDefault()
+        this.setState({...this.initialState, data: this.state.data})
+    }
+
     render() {
         return(
             <div className="row border-bottom">
                 <div className="col-md-6">
                 <CursoForm alteraCampos={this.alteraCampos.bind(this)}
+                    adicionarCurso={this.adicionarCurso.bind(this)}
+                    limparForm={this.limparForm.bind(this)}
                     codigo={this.state.codigo}
                     descricao={this.state.descricao}
                     cargaHoraria={this.state.cargaHoraria}
                     preco={this.state.preco}
                     categoria={this.state.categoria}
-                    adicionarCurso={this.adicionarCurso.bind(this)}
+                    botao={this.state._id && this.state._id !== '' ? 'Atualizar' : 'Adicionar'}
                 />
                 </div>
                 <div className="col-md-6">

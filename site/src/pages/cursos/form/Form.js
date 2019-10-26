@@ -73,8 +73,11 @@ export default class Formulario extends Component {
                         </div>
                     </div>
                     <div className="form-group row">
-                        <button onClick={this.props.adicionarCurso} className="btn btn-primary ml-3 mb-3">
-                            Adicionar
+                        <button onClick={this.props.adicionarCurso} className="btn btn-primary ml-3 mb-3 mr-3">
+                            {this.props.botao}
+                        </button>
+                        <button onClick={this.props.limparForm} className="btn btn-primary ml-3 mb-3">
+                            Limpar
                         </button>
                     </div>
                 </form>
