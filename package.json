@@ -1,0 +1,25 @@
+{
+  "name": "projeto-impacta-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ../node_modules/expo-cli/bin/expo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vicduraes/projeto-impacta-react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vicduraes/projeto-impacta-react/issues"
+  },
+  "homepage": "https://github.com/vicduraes/projeto-impacta-react#readme",
+  "dependencies": {
+    "expo-cli": "^3.4.1",
+    "react-native-cli": "^2.0.1"
+  }
+}
