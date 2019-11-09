@@ -7,6 +7,7 @@ class ContatoForm extends Component {
 
     adicionar = function(event) {
         event.preventDefault()
+
         this.props.addContato(
             this.props.data, 
             this.props.nome,

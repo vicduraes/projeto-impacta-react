@@ -7,21 +7,6 @@ const URL = "http://localhost:3200/api/curso"
 
 export default class Cadastro extends Component {
 
-    initialState = {
-        data: [],
-        _id: '',
-        codigo: 0,
-        descricao: '',
-        cargaHoraria: 0,
-        preco: 0.0,
-        categoria: 'REDES'
-      }
-    
-      constructor (props) {
-        super(props)
-        this.state = this.initialState
-    }
-
     componentWillMount() {
         this.listar()
     }
@@ -139,16 +124,11 @@ export default class Cadastro extends Component {
                 <CursoForm alteraCampos={this.alteraCampos.bind(this)}
                     adicionarCurso={this.adicionarCurso.bind(this)}
                     limparForm={this.limparForm.bind(this)}
-                    codigo={this.state.codigo}
-                    descricao={this.state.descricao}
-                    cargaHoraria={this.state.cargaHoraria}
-                    preco={this.state.preco}
-                    categoria={this.state.categoria}
-                    botao={this.state._id && this.state._id !== '' ? 'Atualizar' : 'Adicionar'}
+                    // botao={this.state._id && this.state._id !== '' ? 'Atualizar' : 'Adicionar'}
                 />
                 </div>
                 <div className="col-md-6">
-                    <CursoList listaCursos={this.state.data}
+                    <CursoList
                         removerCurso={this.removerCurso.bind(this)}
                         consultarCurso={this.consultarCurso.bind(this)}
                     />

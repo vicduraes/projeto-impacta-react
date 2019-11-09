@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
-export default class Formulario extends Component {
+class Formulario extends Component {
 
     render() {
         return (
@@ -85,3 +87,14 @@ export default class Formulario extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    codigo: state.curso.codigo,
+    descricao: state.curso.descricao,
+    cargaHoraria: state.curso.cargaHoraria,
+    preco: state.curso.preco,
+    categoria: state.curso.categoria,
+    botaoInicial: state.curso.botaoInicial
+})
+
+export default connect(mapStateToProps, null)(Formulario)
