@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import {alteraCodigo} from '../../../actions/cadastroActions'
 
 class Formulario extends Component {
 
@@ -97,4 +98,8 @@ const mapStateToProps = state => ({
     botaoInicial: state.curso.botaoInicial
 })
 
-export default connect(mapStateToProps, null)(Formulario)
+const mapDispatchToProps = dispatch => bindActionCreators({
+    alteraCodigo}, dispatch
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Formulario)

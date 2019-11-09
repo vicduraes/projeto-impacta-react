@@ -10,12 +10,13 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
-        case 'ATUALIZA_CODIGO': return {...state, data: action.value}
-        case 'ATUALIZA_DESCRICAO': return {...state, nome: action.value}
-        case 'ATUALIZA_CARGA': return {...state, email: action.value}
-        case 'ATUALIZA_PRECO': return {...state, assunto: action.value}
+        case 'ATUALIZA_CODIGO': return {...state, codigo: action.value}
+        case 'ATUALIZA_DESCRICAO': return {...state, descricao: action.value}
+        case 'ATUALIZA_CARGA': return {...state, cargaHoraria: action.value}
+        case 'ATUALIZA_PRECO': return {...state, preco: action.value}
+        case 'ATUALIZA_CATEGORIA': return {...state, categoria: action.value}
         case 'GET_LISTA': return {...state, lista: action.value}
-        case 'LIMPAR_CaTEGORIA': return INITIAL_STATE
+        case 'LIMPAR_CATEGORIA': return INITIAL_STATE
         default: return state
     }
 }
